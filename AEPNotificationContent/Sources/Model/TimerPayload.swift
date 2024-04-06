@@ -11,70 +11,65 @@
  */
 
 import Foundation
-import UserNotifications
 import UIKit
+import UserNotifications
 
 class TimerPayload: Payload {
-    
-    /// Mark: - Properties
+    // MARK: - Properties
+
     /// The title text for the timer expired view
     var alternateTitle: String?
-    
+
     /// The body text for the timer expired view
     var alternateBody: String?
 
     /// The image URL for the timer expired view
     var alternateImageURL: URL
-    
+
     /// The color of the timer text
-    var timerColor : UIColor
-    
+    var timerColor: UIColor
+
     /// The duration of the timer
     var expiryTime: TimeInterval
-    
+
     /// check with PM
-    lazy var titleBodyPayload: TitleBodyPayload = {
-        return TitleBodyPayload(title: notificationContent.title, body: self.expandedDescription ?? notificationContent.body)
-    }()
-    
+    lazy var titleBodyPayload: TitleBodyPayload = .init(title: notificationContent.title, body: self.expandedDescription ?? notificationContent.body)
+
     /// check with PM
-    lazy var altTitleBodyPayload: TitleBodyPayload = {
-        return TitleBodyPayload(title: alternateTitle ?? notificationContent.title, body: alternateBody ?? "")
-    }()
+    lazy var altTitleBodyPayload: TitleBodyPayload = .init(title: alternateTitle ?? notificationContent.title, body: alternateBody ?? "")
 
     /// Initializes a `TimerPayload` instance from a `UNNotificationContent`.
     /// Initialization fails if the mandatory properties required for TimerTemplate are unavailable
     /// - Parameter notification: The content of the notification.
-    required init?(from notificationContent: UNNotificationContent, notificationDate : Date) {
+    required init?(from notificationContent: UNNotificationContent, notificationDate: Date) {
         let userInfo = notificationContent.userInfo
 
         // Extract the alternate image data and fast fail if alternateImage URL is not available
         guard let alternateImageURL = notificationContent.alternateImageURL else {
             return nil
         }
-        self.alternateImageURL =  alternateImageURL
-        
+        self.alternateImageURL = alternateImageURL
+
         // Extract the timer data from the notification
         guard let expiryTime = Self.extractExpiryTime(from: notificationContent, notificationDate: notificationDate) else {
             return nil
         }
         self.expiryTime = expiryTime
 
-        
         // Extract alternate title, body and image URL from the notification
         self.alternateTitle = notificationContent.alternateTitle
         self.alternateBody = notificationContent.alternateBody
-        
+
         // Extract the color of the timer text color from the notification
         self.timerColor = notificationContent.timerColor
-        
+
         super.init(notificationContent: notificationContent)
         // If the imageUrl or alternate image url not available in the notification, bail out
         guard let _ = imageURL else {
             return nil
         }
     }
-    
+
     /// Extracts the timer information from the notification content
     /// - Parameter notificationContent: The content of the notification
     private static func extractExpiryTime(from content: UNNotificationContent, notificationDate: Date) -> (TimeInterval)? {

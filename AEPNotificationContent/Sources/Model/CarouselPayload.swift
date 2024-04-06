@@ -32,23 +32,8 @@ class CarouselPayload: Payload {
     required init?(from notificationContent: UNNotificationContent) {
         let userInfo = notificationContent.userInfo
 
-        // Retrieve the carousel mode from the notification
-        // If the mode is not available, default to auto
-        if let carouselModeString = userInfo[AEPNotificationContentConstants.PayloadKey.Carousel.MODE] as? String,
-           let mode = CarouselMode(rawValue: carouselModeString) {
-            carouselMode = mode
-        } else {
-            carouselMode = .auto
-        }
-
-        // Retrieve the carousel layout from the notification
-        // If the layout is not available, default to defaultLayout
-        if let carouselLayoutString = userInfo[AEPNotificationContentConstants.PayloadKey.Carousel.LAYOUT] as? String,
-           let layout = CarouselLayout(rawValue: carouselLayoutString) {
-            carouselLayout = layout
-        } else {
-            carouselLayout = .defaultLayout
-        }
+        self.carouselMode = notificationContent.carouselMode
+        self.carouselLayout = notificationContent.carouselLayout
 
         // Retrieve the carousel items from the notification
         if let itemsArray = userInfo[AEPNotificationContentConstants.PayloadKey.Carousel.ITEMS] as? [[String: Any]] {

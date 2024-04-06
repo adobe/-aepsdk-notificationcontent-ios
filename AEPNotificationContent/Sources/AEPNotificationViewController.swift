@@ -27,7 +27,7 @@ open class AEPNotificationViewController: UIViewController, UNNotificationConten
         /// Extract the template type from the notification content
         guard let notificationUserInfo = notification.request.content.userInfo as? [String: AnyObject],
               let templateType = notificationUserInfo[AEPNotificationContentConstants.PayloadKey.TEMPLATE_TYPE] as? String,
-              let payload = createPayload(for: templateType, from: notificationContent)
+              let payload = createPayload(for: templateType, from: notification)
         else {
             displayFallbackTemplate(notificationContent)
             return
@@ -69,14 +69,17 @@ open class AEPNotificationViewController: UIViewController, UNNotificationConten
     /// Returns nil if the template type is not supported or if the payload object could not be created
     /// - Parameters:
     ///   - templateType: String representing the template type
-    ///   - content: UNNotificationContent object from received notification
+    ///   - notification: the received notification
     /// - Returns: the appropriate Payload object
-    private func createPayload(for templateType: String, from content: UNNotificationContent) -> Payload? {
+    private func createPayload(for templateType: String, from notification: UNNotification) -> Payload? {
+        let content = notification.request.content
         switch templateType {
         case AEPNotificationContentConstants.PayloadKey.TemplateType.BASIC:
             return BasicPayload(from: content)
         case AEPNotificationContentConstants.PayloadKey.TemplateType.CAROUSEL:
             return CarouselPayload(from: content)
+        case AEPNotificationContentConstants.PayloadKey.TemplateType.TIMER:
+            return TimerPayload(from: content, notificationDate: notification.date)
         default:
             return nil
         }

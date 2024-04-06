@@ -16,13 +16,6 @@ import UserNotifications
 
 // A class that extracts and loads the base properties for building push templates
 class Payload {
-    /// Default color constants
-    enum DefaultColor {
-        static let background = UIColor.white
-        static let title = UIColor.black
-        static let description = UIColor.darkGray
-    }
-
     // MARK: Public properties
 
     /// The image URL for the notification.
@@ -54,57 +47,13 @@ class Payload {
     init(notificationContent: UNNotificationContent) {
         self.notificationContent = notificationContent
 
-        // Extract image URL from the notification
-        if let imageURLString = notificationContent.userInfo[AEPNotificationContentConstants.PayloadKey.IMAGE_URL] as? String,
-           let imageURL = URL(string: imageURLString) {
-            self.imageURL = imageURL
-        } else {
-            imageURL = nil
-        }
+        self.imageURL = notificationContent.imageURL
+        self.clickURL = notificationContent.clickURL
+        self.expandedDescription = notificationContent.expandedBody
 
-        // Extract click URL from the notification
-        if let clickURLString = notificationContent.userInfo[AEPNotificationContentConstants.PayloadKey.CLICK_URL] as? String,
-           let clickURL = URL(string: clickURLString) {
-            self.clickURL = clickURL
-        } else {
-            clickURL = nil
-        }
-
-        expandedDescription = Self.expandedDescription(from: notificationContent)
-
-        // Extract and set the background color.
-        backgroundColor = Self.extractColor(from: notificationContent,
-                                            key: AEPNotificationContentConstants.PayloadKey.BACKGROUND_COLOR,
-                                            defaultColor: DefaultColor.background)
-
-        // Extract and set the title and description colors.
-        titleColor = Self.extractColor(from: notificationContent,
-                                       key: AEPNotificationContentConstants.PayloadKey.TITLE_COLOR,
-                                       defaultColor: DefaultColor.title)
-        descriptionColor = Self.extractColor(from: notificationContent,
-                                             key: AEPNotificationContentConstants.PayloadKey.BODY_COLOR,
-                                             defaultColor: DefaultColor.description)
-    }
-
-    // MARK: - Private methods
-
-    /// Extracts and returns the expanded description from notification content.
-    /// - Parameter notificationContent: The notification content to extract from.
-    /// - Returns: The expanded description text.
-    private static func expandedDescription(from notificationContent: UNNotificationContent) -> String? {
-        notificationContent.userInfo[AEPNotificationContentConstants.PayloadKey.Basic.EXPANDED_BODY_TXT] as? String
-    }
-
-    /// Extracts and returns a color from notification content for a specific key.
-    /// - Parameters:
-    ///   - notificationContent: The notification content to extract from.
-    ///   - key: The key for the color information.
-    ///   - defaultColor: The default color to return if extraction fails.
-    /// - Returns: The extracted color or the default color.
-    static func extractColor(from notificationContent: UNNotificationContent, key: String, defaultColor: UIColor) -> UIColor {
-        if let colorString = notificationContent.userInfo[key] as? String, let color = UIColor(hexString: colorString) {
-            return color
-        }
-        return defaultColor
+        // Extract the color data
+        self.backgroundColor = notificationContent.backgroundColor
+        self.titleColor = notificationContent.titleColor
+        self.descriptionColor = notificationContent.bodyColor
     }
 }
