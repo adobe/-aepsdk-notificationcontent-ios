@@ -15,6 +15,6 @@ import UserNotifications
 import UserNotificationsUI
 import AEPNotificationContent
 
-class NotificationViewController: AEPNotificationViewController {
+class NotificationViewController {
 
 }

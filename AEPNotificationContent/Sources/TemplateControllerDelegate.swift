@@ -20,4 +20,6 @@ protocol TemplateControllerDelegate {
 
     /// Use this method to get the instance of the parent view controller
     func getParentViewController() -> UIViewController
+    
+    func handleInteraction()
 }

@@ -10,15 +10,15 @@
 			<string>AEPNotification</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
 			<real>0.2</real>
-            <key>UNNotificationExtensionDefaultContentHidden</key>
-            <true/>
-            <key>UNNotificationExtensionUserInteractionEnabled</key>
-            <true/>
+			<key>UNNotificationExtensionDefaultContentHidden</key>
+			<true/>
+			<key>UNNotificationExtensionUserInteractionEnabled</key>
+			<true/>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.usernotifications.content-extension</string>
-        <key>NSExtensionPrincipalClass</key>
-        <string>$(PRODUCT_MODULE_NAME).NotificationViewController</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>AEPNotificationContent.AEPNotificationViewController</string>
 	</dict>
 </dict>
 </plist>

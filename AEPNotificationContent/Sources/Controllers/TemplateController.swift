@@ -42,6 +42,8 @@ class TemplateController: UIViewController {
     init(delegate: TemplateControllerDelegate) {
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapped))
+        self.view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     @available(*, unavailable)
@@ -61,5 +63,10 @@ class TemplateController: UIViewController {
     func removeLoadingIndicator() {
         self.loadingIndicator.stopAnimating()
         self.loadingIndicator.removeFromSuperview()
+    }
+    
+    
+    @objc func tapped() {
+        delegate.handleInteraction()
     }
 }

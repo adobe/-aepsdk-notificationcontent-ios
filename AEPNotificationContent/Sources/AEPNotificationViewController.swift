@@ -51,8 +51,6 @@ open class AEPNotificationViewController: UIViewController, UNNotificationConten
         view.addSubview(controller.view)
     }
 
-    public func didReceive(_: UNNotificationResponse, completionHandler _: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {}
-
     // MARK: - UIViewController delegate methods
 
     /// Called after the controller's view is loaded into memory
@@ -111,4 +109,28 @@ open class AEPNotificationViewController: UIViewController, UNNotificationConten
     func getParentViewController() -> UIViewController {
         self
     }
+    
+    func handleInteraction() {
+        // deeplink/ website
+        extensionContext?.open(URL(string: "https://adobe.com")!)
+        
+        // trackable
+        extensionContext?.performNotificationDefaultAction()
+        
+        // silent notif
+        
+        
+        
+        
+        
+        if let identifier = notification?.request.identifier {
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [identifier])
+        }
+        //extensionContext?.performNotificationDefaultAction()
+    }
+    
+    public func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
+        print("sds")
+    }
+        
 }

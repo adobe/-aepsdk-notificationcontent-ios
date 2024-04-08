@@ -160,6 +160,7 @@
 		B6A31DEF2BC0E4BB00C1CEE0 /* String+LabelHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LabelHeight.swift"; sourceTree = "<group>"; };
 		B6A31DF12BC0E53100C1CEE0 /* UNNotificationContent+TemplateKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNNotificationContent+TemplateKeys.swift"; sourceTree = "<group>"; };
 		B6A31DF32BC11C0E00C1CEE0 /* TimerPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPayloadTests.swift; sourceTree = "<group>"; };
+		B6A31DF62BC375FC00C1CEE0 /* DemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DemoApp-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B6ADF4852B62F34A007D8DDB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
 		B6ADF4862B62F34A007D8DDB /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/iOSSupport/System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = DEVELOPER_DIR; };
 		B6ADF48D2B63169B007D8DDB /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +311,7 @@
 		B632B34C2B63182000D04C48 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6A31DF62BC375FC00C1CEE0 /* DemoApp-Info.plist */,
 				B64224382B688FE100BAA595 /* AppDelegate.swift */,
 				B632B3502B63182000D04C48 /* ContentView.swift */,
 				B632B3512B63182000D04C48 /* DemoApp.swift */,
@@ -817,6 +819,7 @@
 				DEVELOPMENT_TEAM = FKGEE875K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DemoApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -848,6 +851,7 @@
 				DEVELOPMENT_TEAM = FKGEE875K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DemoApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
