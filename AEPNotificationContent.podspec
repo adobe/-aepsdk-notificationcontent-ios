@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AEPNotificationContent"
-  s.version      = "5.0.0"
+  s.version      = "5.0.1"
   s.summary      = "AEPNotificationContent extension for Adobe Experience Cloud SDK. Written and maintained by Adobe."
   s.description  = <<-DESC
                    The AEPNotificationContent extension is used in conjunction with AEPMessaging or AEPCampaignClassic to deliver push notification with predefined templates.
