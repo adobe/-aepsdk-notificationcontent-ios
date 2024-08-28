@@ -156,8 +156,8 @@ class CarouselTemplateController: TemplateController, UIScrollViewDelegate {
 
     func setupView() {
         setupScrollView()
-        // setup page control and arrow buttons only if there are more than one carousel items
-        if payload.carouselItems.count > 1 {
+        // setup page control and arrow buttons only if there are more than one carousel items and the carousel mode is manual
+        if payload.carouselItems.count > 1 && payload.carouselMode == CarouselMode.manual {
             setupPageControl()
             setupArrowButtons()
         }
