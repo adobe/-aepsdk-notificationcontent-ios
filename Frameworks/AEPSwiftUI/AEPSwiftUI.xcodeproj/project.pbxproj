@@ -26,14 +26,14 @@
 		B25A185E52E37DC5113019D8 /* Pods_AEPSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5BC8CF7F954B4FC0A7F4FB /* Pods_AEPSwiftUI.framework */; };
 		B61CCC052CAD2522009942A2 /* IntegrationTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC042CAD2522009942A2 /* IntegrationTestBase.swift */; };
 		B61CCC092CAD2D2C009942A2 /* SmallImageCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC082CAD2D2C009942A2 /* SmallImageCustomizer.swift */; };
-		B61CCC0B2CAD3132009942A2 /* SmallImageCard-NoTitle.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC0A2CAD3132009942A2 /* SmallImageCard-NoTitle.json */; };
-		B61CCC0C2CAD3132009942A2 /* SmallImageCard-NoTitle.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC0A2CAD3132009942A2 /* SmallImageCard-NoTitle.json */; };
-		B61CCC0E2CAD317B009942A2 /* SmallImageCard-NoBody.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC0D2CAD317B009942A2 /* SmallImageCard-NoBody.json */; };
-		B61CCC0F2CAD317B009942A2 /* SmallImageCard-NoBody.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC0D2CAD317B009942A2 /* SmallImageCard-NoBody.json */; };
-		B61CCC112CAD3186009942A2 /* SmallImageCard-NoButtons.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC102CAD3186009942A2 /* SmallImageCard-NoButtons.json */; };
-		B61CCC122CAD3186009942A2 /* SmallImageCard-NoButtons.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC102CAD3186009942A2 /* SmallImageCard-NoButtons.json */; };
-		B61CCC142CAD3199009942A2 /* SmallImageCard-NoImage.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC132CAD3199009942A2 /* SmallImageCard-NoImage.json */; };
-		B61CCC152CAD3199009942A2 /* SmallImageCard-NoImage.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC132CAD3199009942A2 /* SmallImageCard-NoImage.json */; };
+		B61CCC0B2CAD3132009942A2 /* small image no title.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC0A2CAD3132009942A2 /* small image no title.json */; };
+		B61CCC0C2CAD3132009942A2 /* small image no title.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC0A2CAD3132009942A2 /* small image no title.json */; };
+		B61CCC0E2CAD317B009942A2 /* small image no body.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC0D2CAD317B009942A2 /* small image no body.json */; };
+		B61CCC0F2CAD317B009942A2 /* small image no body.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC0D2CAD317B009942A2 /* small image no body.json */; };
+		B61CCC112CAD3186009942A2 /* small image no buttons.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC102CAD3186009942A2 /* small image no buttons.json */; };
+		B61CCC122CAD3186009942A2 /* small image no buttons.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC102CAD3186009942A2 /* small image no buttons.json */; };
+		B61CCC142CAD3199009942A2 /* small image no image.json in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC132CAD3199009942A2 /* small image no image.json */; };
+		B61CCC152CAD3199009942A2 /* small image no image.json in Resources */ = {isa = PBXBuildFile; fileRef = B61CCC132CAD3199009942A2 /* small image no image.json */; };
 		B61CCC172CADE26E009942A2 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC162CADE259009942A2 /* MockNetworkService.swift */; };
 		B61CCC1A2CAE0B27009942A2 /* SmallImageTemplateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC192CAE0B27009942A2 /* SmallImageTemplateTest.swift */; };
 		B61CCC1D2CAE67D4009942A2 /* ContentCardTrackingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCC1C2CAE67D4009942A2 /* ContentCardTrackingTest.swift */; };
@@ -170,30 +170,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D160BEF0889F79BFABF7C40 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		245C787B45D5CFB66F0CD892 /* Pods_AEPSwiftUITestAppUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEPSwiftUITestAppUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		259F292A5541FC211242A8C2 /* Pods-AEPSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEPSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-AEPSwiftUI/Pods-AEPSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		2ED41BA875FEB39933D8B5D6 /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37502A12B2503425ECE90DFB /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
-		384A8972681C0EFF071E59E5 /* Pods-FunctionalTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalTest.debug.xcconfig"; path = "Target Support Files/Pods-FunctionalTest/Pods-FunctionalTest.debug.xcconfig"; sourceTree = "<group>"; };
 		3FD8A95153BF2BAE5D35B875 /* Pods-AEPSwiftUITestAppUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEPSwiftUITestAppUIKit.debug.xcconfig"; path = "Target Support Files/Pods-AEPSwiftUITestAppUIKit/Pods-AEPSwiftUITestAppUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		4B7976F1C93944A62152BD6B /* Pods-AEPSwiftUITestAppUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEPSwiftUITestAppUIKit.release.xcconfig"; path = "Target Support Files/Pods-AEPSwiftUITestAppUIKit/Pods-AEPSwiftUITestAppUIKit.release.xcconfig"; sourceTree = "<group>"; };
 		4F5BCF62F0A68D304345565A /* Pods-IntegrationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTest.debug.xcconfig"; path = "Target Support Files/Pods-IntegrationTest/Pods-IntegrationTest.debug.xcconfig"; sourceTree = "<group>"; };
 		63FE3BBA2E0F66C177907A39 /* Pods-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.debug.xcconfig"; path = "Target Support Files/Pods-UnitTests/Pods-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6630EC878F77BE418BBEFA85 /* Pods-AEPSwiftUITestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEPSwiftUITestApp.debug.xcconfig"; path = "Target Support Files/Pods-AEPSwiftUITestApp/Pods-AEPSwiftUITestApp.debug.xcconfig"; sourceTree = "<group>"; };
-		6E7D2C1EC369EBC80ABE4DC1 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF68DD0B4A3B8CF1AE8CD35 /* Pods-IntegrationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTest.release.xcconfig"; path = "Target Support Files/Pods-IntegrationTest/Pods-IntegrationTest.release.xcconfig"; sourceTree = "<group>"; };
-		7B072417A210E5AACAC36710 /* Pods-FunctionalTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalTest.release.xcconfig"; path = "Target Support Files/Pods-FunctionalTest/Pods-FunctionalTest.release.xcconfig"; sourceTree = "<group>"; };
 		7E5BC8CF7F954B4FC0A7F4FB /* Pods_AEPSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEPSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801BECC51A40A472303AE4DF /* Pods_AEPSwiftUITestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AEPSwiftUITestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF32B1E170EB424505DE98 /* Pods-AEPSwiftUITestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AEPSwiftUITestApp.release.xcconfig"; path = "Target Support Files/Pods-AEPSwiftUITestApp/Pods-AEPSwiftUITestApp.release.xcconfig"; sourceTree = "<group>"; };
 		A517C636925A883EFB60D9C4 /* Pods_IntegrationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntegrationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61CCC042CAD2522009942A2 /* IntegrationTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTestBase.swift; sourceTree = "<group>"; };
 		B61CCC082CAD2D2C009942A2 /* SmallImageCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallImageCustomizer.swift; sourceTree = "<group>"; };
-		B61CCC0A2CAD3132009942A2 /* SmallImageCard-NoTitle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SmallImageCard-NoTitle.json"; sourceTree = "<group>"; };
-		B61CCC0D2CAD317B009942A2 /* SmallImageCard-NoBody.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SmallImageCard-NoBody.json"; sourceTree = "<group>"; };
-		B61CCC102CAD3186009942A2 /* SmallImageCard-NoButtons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SmallImageCard-NoButtons.json"; sourceTree = "<group>"; };
-		B61CCC132CAD3199009942A2 /* SmallImageCard-NoImage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SmallImageCard-NoImage.json"; sourceTree = "<group>"; };
+		B61CCC0A2CAD3132009942A2 /* small image no title.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "small image no title.json"; sourceTree = "<group>"; };
+		B61CCC0D2CAD317B009942A2 /* small image no body.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "small image no body.json"; sourceTree = "<group>"; };
+		B61CCC102CAD3186009942A2 /* small image no buttons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "small image no buttons.json"; sourceTree = "<group>"; };
+		B61CCC132CAD3199009942A2 /* small image no image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "small image no image.json"; sourceTree = "<group>"; };
 		B61CCC162CADE259009942A2 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		B61CCC192CAE0B27009942A2 /* SmallImageTemplateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallImageTemplateTest.swift; sourceTree = "<group>"; };
 		B61CCC1C2CAE67D4009942A2 /* ContentCardTrackingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardTrackingTest.swift; sourceTree = "<group>"; };
@@ -334,14 +330,10 @@
 				C6EE3731C5E42D34C55C6B4C /* Pods-AEPSwiftUI.release.xcconfig */,
 				63FE3BBA2E0F66C177907A39 /* Pods-UnitTests.debug.xcconfig */,
 				37502A12B2503425ECE90DFB /* Pods-UnitTests.release.xcconfig */,
-				6E7D2C1EC369EBC80ABE4DC1 /* Pods-TestApp.debug.xcconfig */,
-				1D160BEF0889F79BFABF7C40 /* Pods-TestApp.release.xcconfig */,
 				6630EC878F77BE418BBEFA85 /* Pods-AEPSwiftUITestApp.debug.xcconfig */,
 				91CF32B1E170EB424505DE98 /* Pods-AEPSwiftUITestApp.release.xcconfig */,
 				3FD8A95153BF2BAE5D35B875 /* Pods-AEPSwiftUITestAppUIKit.debug.xcconfig */,
 				4B7976F1C93944A62152BD6B /* Pods-AEPSwiftUITestAppUIKit.release.xcconfig */,
-				384A8972681C0EFF071E59E5 /* Pods-FunctionalTest.debug.xcconfig */,
-				7B072417A210E5AACAC36710 /* Pods-FunctionalTest.release.xcconfig */,
 				4F5BCF62F0A68D304345565A /* Pods-IntegrationTest.debug.xcconfig */,
 				6FF68DD0B4A3B8CF1AE8CD35 /* Pods-IntegrationTest.release.xcconfig */,
 			);
@@ -368,6 +360,18 @@
 				B61CCC082CAD2D2C009942A2 /* SmallImageCustomizer.swift */,
 			);
 			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		B61CCC202CB057C1009942A2 /* SmallImageCard */ = {
+			isa = PBXGroup;
+			children = (
+				B6E108002CABC1FD0037E7D0 /* SmallImageCard.json */,
+				B61CCC0A2CAD3132009942A2 /* small image no title.json */,
+				B61CCC0D2CAD317B009942A2 /* small image no body.json */,
+				B61CCC102CAD3186009942A2 /* small image no buttons.json */,
+				B61CCC132CAD3199009942A2 /* small image no image.json */,
+			);
+			path = SmallImageCard;
 			sourceTree = "<group>";
 		};
 		B61DF4A52CAB010000349B6F /* IntegrationTest */ = {
@@ -589,13 +593,9 @@
 		B6E108022CABC2490037E7D0 /* NetworkResponses */ = {
 			isa = PBXGroup;
 			children = (
+				B61CCC202CB057C1009942A2 /* SmallImageCard */,
 				B6E1084C2CAC77B30037E7D0 /* MultipleCards.json */,
 				B6E108052CABE2AB0037E7D0 /* NoCard.json */,
-				B6E108002CABC1FD0037E7D0 /* SmallImageCard.json */,
-				B61CCC0A2CAD3132009942A2 /* SmallImageCard-NoTitle.json */,
-				B61CCC0D2CAD317B009942A2 /* SmallImageCard-NoBody.json */,
-				B61CCC102CAD3186009942A2 /* SmallImageCard-NoButtons.json */,
-				B61CCC132CAD3199009942A2 /* SmallImageCard-NoImage.json */,
 			);
 			path = NetworkResponses;
 			sourceTree = "<group>";
@@ -816,14 +816,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B61CCC152CAD3199009942A2 /* SmallImageCard-NoImage.json in Resources */,
+				B61CCC152CAD3199009942A2 /* small image no image.json in Resources */,
 				B6E108042CABC3960037E7D0 /* SmallImageCard.json in Resources */,
 				B6E108072CABE2BA0037E7D0 /* NoCard.json in Resources */,
 				B61DF4ED2CAB3E0C00349B6F /* AEPSwiftUI.xctestplan in Resources */,
-				B61CCC0F2CAD317B009942A2 /* SmallImageCard-NoBody.json in Resources */,
-				B61CCC122CAD3186009942A2 /* SmallImageCard-NoButtons.json in Resources */,
+				B61CCC0F2CAD317B009942A2 /* small image no body.json in Resources */,
+				B61CCC122CAD3186009942A2 /* small image no buttons.json in Resources */,
 				B6E1084D2CAC77C40037E7D0 /* MultipleCards.json in Resources */,
-				B61CCC0C2CAD3132009942A2 /* SmallImageCard-NoTitle.json in Resources */,
+				B61CCC0C2CAD3132009942A2 /* small image no title.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,12 +1117,12 @@
 				B669ED622C7075A700A26954 /* ContentCardTestUtil.swift in Sources */,
 				B61DF4B82CAB0B9F00349B6F /* AEPTextTests.swift in Sources */,
 				B61DF4B92CAB0B9F00349B6F /* AEPStackTests.swift in Sources */,
-				B61CCC0E2CAD317B009942A2 /* SmallImageCard-NoBody.json in Sources */,
+				B61CCC0E2CAD317B009942A2 /* small image no body.json in Sources */,
 				B61DF4BA2CAB0B9F00349B6F /* ContentCardUITests.swift in Sources */,
 				B61DF4BB2CAB0B9F00349B6F /* AEPSwiftUIPublicAPITests.swift in Sources */,
 				B6E108012CABC1FD0037E7D0 /* SmallImageCard.json in Sources */,
 				B61DF4BC2CAB0B9F00349B6F /* SmallImageTemplateTests.swift in Sources */,
-				B61CCC0B2CAD3132009942A2 /* SmallImageCard-NoTitle.json in Sources */,
+				B61CCC0B2CAD3132009942A2 /* small image no title.json in Sources */,
 				B61DF4BD2CAB0B9F00349B6F /* TemplateBuilderTests.swift in Sources */,
 				B61DF4BE2CAB0B9F00349B6F /* ContentCardTemplateTypeTests.swift in Sources */,
 				B61DF4BF2CAB0B9F00349B6F /* AEPDismissButtonTests.swift in Sources */,
@@ -1130,8 +1130,8 @@
 				B61DF4C12CAB0B9F00349B6F /* AEPTextTypeTests.swift in Sources */,
 				B61DF4C22CAB0B9F00349B6F /* AEPImageTests.swift in Sources */,
 				B61DF4C32CAB0B9F00349B6F /* DismissButtonStyleTests.swift in Sources */,
-				B61CCC142CAD3199009942A2 /* SmallImageCard-NoImage.json in Sources */,
-				B61CCC112CAD3186009942A2 /* SmallImageCard-NoButtons.json in Sources */,
+				B61CCC142CAD3199009942A2 /* small image no image.json in Sources */,
+				B61CCC112CAD3186009942A2 /* small image no buttons.json in Sources */,
 				B61DF4C42CAB0B9F00349B6F /* ContentCardSchemaData+TemplateContentTests.swift in Sources */,
 				B669EDB22C793B8700A26954 /* EmptyCustomizer.swift in Sources */,
 			);
