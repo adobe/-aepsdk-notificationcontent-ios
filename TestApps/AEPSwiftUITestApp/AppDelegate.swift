@@ -31,7 +31,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                           Assurance.self
                         ]
         MobileCore.registerExtensions(extensions, {
-            MobileCore.configureWith(appId: "")
+            MobileCore.configureWith(appId: "bf7248f92b53/6a10e2493586/launch-143ff2a2e27a-development")
         })
         
         let homePageSurface = Surface(path: "homepage")
