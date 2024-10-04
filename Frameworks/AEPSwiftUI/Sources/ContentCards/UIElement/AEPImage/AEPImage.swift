@@ -21,7 +21,7 @@ public class AEPImage: ObservableObject, AEPViewModel {
 
     /// The URL of the dark mode image to be displayed.
     var darkUrl: URL?
-    
+
     /// The alternate text for the image for accessibility purpose.
     var altText: String?
 
@@ -57,7 +57,7 @@ public class AEPImage: ObservableObject, AEPViewModel {
     /// - Parameter data: The dictionary containing server side styling and content of the Image
     init?(_ data: [String: Any]) {
         altText = data[Constants.CardTemplate.UIElement.Image.ALTERNATE_TEXT] as? String
-        
+
         // Attempt to initialize from URL
         if let urlString = data[Constants.CardTemplate.UIElement.Image.URL] as? String,
            let url = URL(string: urlString) {
