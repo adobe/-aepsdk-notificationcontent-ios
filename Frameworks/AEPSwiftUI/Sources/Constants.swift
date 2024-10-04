@@ -96,6 +96,7 @@ enum Constants {
                 static let BUNDLE = "bundle"
                 static let DARK_BUNDLE = "darkBundle"
                 static let ICON = "icon"
+                static let ALTERNATE_TEXT = "alt"
             }
         }
     }
