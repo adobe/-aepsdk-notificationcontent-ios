@@ -18,6 +18,14 @@
         "identifier" : "B626E05C2C5EC26300ED1816",
         "name" : "UnitTests"
       }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:AEPSwiftUI.xcodeproj",
+        "identifier" : "B61DF48C2CAAF9ED00349B6F",
+        "name" : "IntegrationTest"
+      }
     }
   ],
   "version" : 1
