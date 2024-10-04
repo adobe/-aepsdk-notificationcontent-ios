@@ -14,7 +14,7 @@ import Testing
 @testable import AEPSwiftUI
 
 @Suite("Content card event listening", .serialized)
-class ContentCardEventListeningTest : FunctionalTestBase, ContentCardUIEventListening {
+class ContentCardEventListeningTest : IntegrationTestBase, ContentCardUIEventListening {
 
     var displayEventReceived : Bool
     var dismissEventReceived : Bool

@@ -17,7 +17,7 @@ import Testing
 import AEPTestUtils
 
 @Suite("ContentCard Tracking", .serialized, .tags(.NetworkTest, .TrackingTest))
-class ContentCardTrackingTest : FunctionalTestBase {
+class ContentCardTrackingTest : IntegrationTestBase {
     
     override init() {
         super.init()

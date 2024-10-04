@@ -15,7 +15,7 @@ import SwiftUI
 @testable import AEPSwiftUI
 
 @Suite("GetContentCardUI", .serialized)
-class GetContentCardUITest : FunctionalTestBase {
+class GetContentCardUITest : IntegrationTestBase {
     
     override init() {
         super.init()

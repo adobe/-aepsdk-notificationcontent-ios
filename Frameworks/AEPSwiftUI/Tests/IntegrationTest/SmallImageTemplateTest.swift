@@ -17,7 +17,7 @@ import SwiftUI
 @testable import AEPCore
 
 @Suite("SmallImageTemplate", .serialized, .tags(.SmallImageTemplate))
-class SmallImageTemplateTest : FunctionalTestBase {
+class SmallImageTemplateTest : IntegrationTestBase {
     
     override init() {
         super.init()

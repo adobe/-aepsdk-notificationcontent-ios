@@ -24,7 +24,7 @@
       "target" : {
         "containerPath" : "container:AEPSwiftUI.xcodeproj",
         "identifier" : "B61DF48C2CAAF9ED00349B6F",
-        "name" : "FunctionalTest"
+        "name" : "IntegrationTest"
       }
     }
   ],

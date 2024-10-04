@@ -27,7 +27,7 @@ extension Tag {
     @Tag static var TrackingTest : Self
 }
 
-class FunctionalTestBase {
+class IntegrationTestBase {
     
     let mockNetwork: MockNetworkService = MockNetworkService()
     let homeSurface = Surface(path: "home")

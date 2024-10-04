@@ -20,8 +20,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B61DF48C2CAAF9ED00349B6F"
-               BuildableName = "FunctionalTest.xctest"
-               BlueprintName = "FunctionalTest"
+               BuildableName = "IntegrationTest.xctest"
+               BlueprintName = "IntegrationTest"
                ReferencedContainer = "container:AEPSwiftUI.xcodeproj">
             </BuildableReference>
          </TestableReference>
