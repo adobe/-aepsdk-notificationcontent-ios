@@ -34,7 +34,7 @@ target 'UnitTests' do
      test_utils
 end
 
-target 'FunctionalTest' do
+target 'IntegrationTest' do
      lib_main
      test_utils
      pod 'AEPEdgeConsent'
