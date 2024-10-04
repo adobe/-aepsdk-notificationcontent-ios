@@ -35,7 +35,7 @@ public class AEPStack: ObservableObject {
 
     /// Adds a view as the last child of the stack.
     /// - Parameter view: The SwiftUI view to be added.
-    public func addView<V: View>(_ view: V) {
+    func addView<V: View>(_ view: V) {
         let model = AnyViewModel(wrappedView: view)
         childModels.append(model)
     }
@@ -47,7 +47,7 @@ public class AEPStack: ObservableObject {
     ///   - index: The index at which to insert the view model.
     /// - Throws:
     ///   - `AEPStackError.indexOutOfBounds` if the specified index is out of the valid range.
-    public func insertView<V: View>(_ view: V, at index: Int) throws {
+    func insertView<V: View>(_ view: V, at index: Int) throws {
         guard index >= 0 && index <= childModels.count else {
             Log.warning(label: Constants.LOG_TAG, "AEPStack: Cannot insert view at index \(index). Index out of bounds.")
             throw AEPStackError.indexOutOfBounds
@@ -60,7 +60,7 @@ public class AEPStack: ObservableObject {
     /// - Parameter index: The index of the view model to be removed.
     /// - Throws:
     ///   - `AEPStackError.indexOutOfBounds` if the specified index is out of the valid range.
-    public func removeView(at index: Int) throws {
+    func removeView(at index: Int) throws {
         guard childModels.indices.contains(index) else {
             Log.warning(label: Constants.LOG_TAG, "AEPStack: Cannot remove view at index \(index). Index out of bounds.")
             throw AEPStackError.indexOutOfBounds
