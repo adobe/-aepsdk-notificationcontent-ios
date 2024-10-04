@@ -15,7 +15,7 @@ import SwiftUI
 
 enum Constants {
     static let LOG_TAG = "AEPSwiftUI"
-    static let EXTENSION_VERSION = "5.1.0-beta"
+    static let EXTENSION_VERSION = "5.1.0"
 
     enum CardTemplate {
         static let SmallImage = "SmallImage"
