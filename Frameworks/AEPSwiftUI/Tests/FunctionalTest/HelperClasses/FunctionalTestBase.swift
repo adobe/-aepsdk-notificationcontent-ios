@@ -80,7 +80,7 @@ class FunctionalTestBase {
     ///**************************************************************
     /// private  helper methods
     ///**************************************************************
-    ///
+    
     /// Boots the SDK by registering and configuring the required extension
     private func bootSDK() {
         ServiceProvider.shared.networkService = mockNetwork

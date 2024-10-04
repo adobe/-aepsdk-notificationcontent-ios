@@ -13,7 +13,7 @@
 import Testing
 @testable import AEPSwiftUI
 
-@Suite("Content card event listening", .serialized, .tags(.NetworkTest, .TrackingTest))
+@Suite("Content card event listening", .serialized)
 class ContentCardEventListeningTest : FunctionalTestBase, ContentCardUIEventListening {
 
     var displayEventReceived : Bool
@@ -43,26 +43,35 @@ class ContentCardEventListeningTest : FunctionalTestBase, ContentCardUIEventList
     
     @Test("dismiss event")
     func dismissEvent() async throws {
+        // setup
         let cards = try await getContentCardUI(homeSurface, listener: self)
         let card = try #require (cards.first?.template as? SmallImageTemplate)
         
+        // test
         card.eventHandler?.onDismiss()
         
+        // verify
         #expect(dismissEventReceived == true)
     }
     
     @Test("interact event")
     func interactEvent() async throws {
+        // setup
         let cards = try await getContentCardUI(homeSurface, listener: self)
         let card = try #require (cards.first?.template as? SmallImageTemplate)
         
+        // test
         card.eventHandler?.onInteract(interactionId: "Button Clicked", actionURL: nil)
         
+        // verify
         #expect(interactEventReceived == true)
-        
     }
 
 
+    ///**************************************************************
+    /// ContentCardUIEventListening protocol implementation
+    ///**************************************************************
+    
     func onDismiss(_ card: ContentCardUI) {
         dismissEventReceived = true
     }
@@ -75,5 +84,4 @@ class ContentCardEventListeningTest : FunctionalTestBase, ContentCardUIEventList
     func onDisplay(_ card: ContentCardUI) {
         displayEventReceived = true
     }
-    
 }
