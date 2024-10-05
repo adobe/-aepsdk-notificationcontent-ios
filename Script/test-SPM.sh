@@ -23,14 +23,14 @@ mkdir -p $PROJECT_NAME && cd $PROJECT_NAME
 swift package init
 
 # Create the Package.swift.
-echo "// swift-tools-version:5.3
+echo "// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 let package = Package(
     name: \"TestProject\",
     defaultLocalization: \"en-US\",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v15)
     ],
     products: [
         .library(
@@ -39,11 +39,15 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: \"AEPNotificationContent\", path: \"../\")
+        .package(name: \"AEPUI\", path: \"../\")
     ],
     targets: [
         .target(
-            name: \"TestProject\")
+            name: \"TestProject\",
+            dependencies: [
+                .product(name: \"AEPNotificationContent\", package: \"AEPUI\"),
+                .product(name: \"AEPSwiftUI\", package: \"AEPUI\")
+            ])
     ]
 )
 " >Package.swift

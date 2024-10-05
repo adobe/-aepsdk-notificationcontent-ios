@@ -1,0 +1,72 @@
+PODS:
+  - AEPAssurance (5.0.1):
+    - AEPCore (< 6.0.0, >= 5.0.0)
+    - AEPServices (< 6.0.0, >= 5.0.0)
+  - AEPCore (5.2.0):
+    - AEPRulesEngine (< 6.0.0, >= 5.0.0)
+    - AEPServices (< 6.0.0, >= 5.2.0)
+  - AEPEdge (5.0.2):
+    - AEPCore (< 6.0.0, >= 5.1.0)
+    - AEPEdgeIdentity (< 6.0.0, >= 5.0.0)
+  - AEPEdgeConsent (5.0.0):
+    - AEPCore (< 6.0.0, >= 5.0.0)
+    - AEPEdge (< 6.0.0, >= 5.0.0)
+  - AEPEdgeIdentity (5.0.0):
+    - AEPCore (< 6.0.0, >= 5.0.0)
+  - AEPMessaging (5.2.0):
+    - AEPCore (< 6.0.0, >= 5.2.0)
+    - AEPEdge (< 6.0.0, >= 5.0.2)
+    - AEPEdgeIdentity (< 6.0.0, >= 5.0.0)
+    - AEPServices (< 6.0.0, >= 5.2.0)
+  - AEPRulesEngine (5.0.0)
+  - AEPServices (5.2.0)
+  - AEPTestUtils (5.0.1):
+    - AEPCore (>= 5.2.0)
+    - AEPServices (>= 5.2.0)
+  - SwiftLint (0.52.0)
+
+DEPENDENCIES:
+  - AEPAssurance
+  - AEPCore
+  - AEPEdgeConsent
+  - AEPMessaging
+  - AEPTestUtils (from `https://github.com/adobe/aepsdk-testutils-ios.git`, tag `5.0.1`)
+  - SwiftLint (= 0.52.0)
+
+SPEC REPOS:
+  trunk:
+    - AEPAssurance
+    - AEPCore
+    - AEPEdge
+    - AEPEdgeConsent
+    - AEPEdgeIdentity
+    - AEPMessaging
+    - AEPRulesEngine
+    - AEPServices
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  AEPTestUtils:
+    :git: https://github.com/adobe/aepsdk-testutils-ios.git
+    :tag: 5.0.1
+
+CHECKOUT OPTIONS:
+  AEPTestUtils:
+    :git: https://github.com/adobe/aepsdk-testutils-ios.git
+    :tag: 5.0.1
+
+SPEC CHECKSUMS:
+  AEPAssurance: df04baeace42befb0cc213fd6cdfe51651d11ba6
+  AEPCore: db53082c207c28166ed6aa9ae6262a55e95c78aa
+  AEPEdge: edf73ae8900016940cd7fcb29a89a576a1c6b0ae
+  AEPEdgeConsent: d7db1d19eb4c1e2146360ed3c8df315f671b26d5
+  AEPEdgeIdentity: 3161ff33434586962946912d6b8e9e8fca1c4d23
+  AEPMessaging: cee05697723e26bfb42aa7b05c9cd726ff7c95bb
+  AEPRulesEngine: fe5800653a4bee07b1e41e61b4d5551f0dba557b
+  AEPServices: d959143d13fde7e8464c19527df6baacdef765ce
+  AEPTestUtils: 6b043ef1de8fc7fb4067f7fa6e2dcdaf9ba4e54f
+  SwiftLint: 13280e21cdda6786ad908dc6e416afe5acd1fcb7
+
+PODFILE CHECKSUM: 4302c2a98f18420d17ca0598fc0416dda8c88ad8
+
+COCOAPODS: 1.15.0

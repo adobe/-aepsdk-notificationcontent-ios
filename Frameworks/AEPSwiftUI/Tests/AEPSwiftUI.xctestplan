@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "A29F5DBE-7265-4CAC-ABED-8544B30A2246",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:AEPSwiftUI.xcodeproj",
+        "identifier" : "B626E05C2C5EC26300ED1816",
+        "name" : "UnitTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:AEPSwiftUI.xcodeproj",
+        "identifier" : "B61DF48C2CAAF9ED00349B6F",
+        "name" : "IntegrationTest"
+      }
+    }
+  ],
+  "version" : 1
+}

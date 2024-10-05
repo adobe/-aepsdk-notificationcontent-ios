@@ -27,7 +27,7 @@ echo "Target version - ${BLUE}$1${NC}"
 echo "------------------AEPNotificationContent-------------------"
 PODSPEC_VERSION_IN_AEPNotificationContent=$(pod ipc spec AEPNotificationContent.podspec | jq '.version' | tr -d '"')
 echo "Local podspec version - ${BLUE}${PODSPEC_VERSION_IN_AEPNotificationContent}${NC}"
-SOURCE_CODE_VERSION_IN_AEPNotificationContent=$(cat ./AEPNotificationContent/Sources/Constants.swift | egrep '\s*EXTENSION_VERSION\s*=\s*\"(.*)\"' | ruby -e "puts gets.scan(/\"(.*)\"/)[0] " | tr -d '"')
+SOURCE_CODE_VERSION_IN_AEPNotificationContent=$(cat ./Frameworks/AEPNotificationContent/Sources/Constants.swift | egrep '\s*EXTENSION_VERSION\s*=\s*\"(.*)\"' | ruby -e "puts gets.scan(/\"(.*)\"/)[0] " | tr -d '"')
 echo "Source code version - ${BLUE}${SOURCE_CODE_VERSION_IN_AEPNotificationContent}${NC}"
 
 if [[ "$1" == "$PODSPEC_VERSION_IN_AEPNotificationContent" ]] && [[ "$1" == "$SOURCE_CODE_VERSION_IN_AEPNotificationContent" ]]; then
@@ -36,4 +36,18 @@ else
     echo "${RED}[Error]${NC} Version do not match!"
     exit -1
 fi
+
+echo "------------------AEPSwiftUI-------------------"
+PODSPEC_VERSION_IN_AEPSwiftUI=$(pod ipc spec AEPSwiftUI.podspec | jq '.version' | tr -d '"')
+echo "Local podspec version - ${BLUE}${PODSPEC_VERSION_IN_AEPSwiftUI}${NC}"
+SOURCE_CODE_VERSION_IN_AEPSwiftUI=$(cat ./Frameworks/AEPSwiftUI/Sources/Constants.swift | egrep '\s*EXTENSION_VERSION\s*=\s*\"(.*)\"' | ruby -e "puts gets.scan(/\"(.*)\"/)[0] " | tr -d '"')
+echo "Source code version - ${BLUE}${SOURCE_CODE_VERSION_IN_AEPSwiftUI}${NC}"
+
+if [[ "$1" == "$PODSPEC_VERSION_IN_AEPSwiftUI" ]] && [[ "$1" == "$SOURCE_CODE_VERSION_IN_AEPSwiftUI" ]]; then
+    echo "${GREEN}Pass!${NC}"
+else
+    echo "${RED}[Error]${NC} Version do not match!"
+    exit -1
+fi
+
 exit 0

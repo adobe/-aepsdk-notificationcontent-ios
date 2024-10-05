@@ -1,9 +1,14 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - AEPNotificationContent/Tests
   - .build
+  - TestApps
+  - Frameworks/AEPNotificationContent/Tests
+  - Frameworks/AEPNotificationContent/Pods
+  - Frameworks/AEPSwiftUI/Tests
+  - Frameworks/AEPSwiftUI/Pods
   
 included:
-  - AEPNotificationContent
+  - Frameworks/AEPNotificationContent
+  - Frameworks/AEPSwiftUI
   
 line_length: 1000
 

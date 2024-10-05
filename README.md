@@ -1,23 +1,24 @@
-# Adobe Experience Platform - NotificationContent extension for iOS
-
-[![Build](https://github.com/adobe/aepsdk-notificationcontent-ios/actions/workflows/build.yml/badge.svg)](https://github.com/adobe/aepsdk-notificationcontent-ios/actions/workflows/build.yml)
-[![Cocoapods](https://img.shields.io/github/v/release/adobe/aepsdk-notificationcontent-ios?label=CocoaPods&logo=apple&logoColor=white&color=orange&sort=semver)](https://cocoapods.org/pods/AEPNotificationContent)
-[![SPM](https://img.shields.io/github/v/release/adobe/aepsdk-notificationcontent-ios?label=SPM&logo=apple&logoColor=white&color=orange&sort=semver)](https://github.com/adobe/aepsdk-notificationcontent-ios/releases)
+# Adobe Experience Platform - UI extensions for iOS
 
 ## About this project
 
-AEPNotificationContent extension provides the capability to deliver predefined push notification templates to your application. This extension is compatible with push notifications originating from Adobe Campaign Classic.
+This repository is a mono repo structured to hold all AEP SDK extensions that provide a UI to the target application.
 
-For further information about Adobe SDKs, visit the [developer documentation](https://developer.adobe.com/client-sdks/documentation/).
+## Frameworks
+
+| Framework | Current version |
+| --------- | --------------- |
+| [AEPNotificationContent](./Frameworks/AEPNotificationContent/) | [![Cocoapods](https://img.shields.io/github/v/release/adobe/aepsdk-ui-ios?label=CocoaPods&logo=apple&logoColor=white&color=orange&sort=semver)](https://cocoapods.org/pods/AEPNotificationContent) |
+| [AEPSwiftUI](./Frameworks/AEPSwiftUI/) | Coming soon! |
 
 ## Requirements
 
-- Xcode 15 (or newer)
-- Swift 5.1 (or newer)
+Requirements vary depending on which framework is being used.
 
 ## Getting started
 
-Check out the [documentation](./Documentation/README.md) to get started using this extension.
+* [Documentation](./Documentation/README.md) for `AEPNotificationContent`.
+* [Documentation](./Frameworks/AEPSwiftUI/Documentation/README.md) for `AEPSwiftUI`.
 
 ## Contributing
 

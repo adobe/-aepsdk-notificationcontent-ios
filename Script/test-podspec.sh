@@ -14,6 +14,25 @@ set -e # Any subsequent(*) commands which fail will cause the shell script to ex
 
 PROJECT_NAME=TestProject
 
+help()
+{
+   echo ""
+   echo "Usage: $0 -n FRAMEWORK_NAME"
+   echo ""
+   echo "    -n\t- Name of the framework being validated. \n\t  Example: NotificationContent, SwiftUI\n"
+   echo "    -v\t- iOS version being targeted. \n\t  Example: 12.0, 15.0\n"
+   exit 1 # Exit script after printing help
+}
+
+while getopts "n:v:" opt
+do
+   case "$opt" in
+      n ) NAME="$OPTARG" ;;
+      v ) IOS_VERSION="$OPTARG" ;;
+      ? ) help ;; # Print help in case parameter is non-existent
+   esac
+done
+
 # Clean up.
 rm -rf $PROJECT_NAME
 
@@ -32,7 +51,7 @@ targets:
     type: framework
     sources: Sources
     platform: iOS
-    deploymentTarget: "12.0"
+    deploymentTarget: "$IOS_VERSION"
     settings:
       GENERATE_INFOPLIST_FILE: YES
 " >>project.yml
@@ -41,15 +60,15 @@ xcodegen generate
 
 # Create a Podfile with our pod as dependency.
 echo "
-platform :ios, '12.0'
+platform :ios, '$IOS_VERSION'
 target '$PROJECT_NAME' do
   use_frameworks!
-  pod 'AEPNotificationContent', :path => '../AEPNotificationContent.podspec'
+  pod '$NAME', :path => '../$NAME.podspec'
 end
 " >>Podfile
 
 # Install the pods.
-pod install
+pod update
 
 # Archive for generic iOS device
 echo '############# Archive for generic iOS device ###############'

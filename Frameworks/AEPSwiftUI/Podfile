@@ -1,0 +1,53 @@
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '12.0'
+
+use_frameworks!
+
+# don't warn me
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
+workspace 'AEPSwiftUI'
+project 'AEPSwiftUI.xcodeproj'
+
+pod 'SwiftLint', '0.52.0'
+
+def lib_main
+    pod 'AEPCore'
+    pod 'AEPMessaging'
+end
+
+def test_utils
+    pod 'AEPTestUtils', :git => 'https://github.com/adobe/aepsdk-testutils-ios.git', :tag => '5.0.1'
+end
+
+# ==================
+# TARGET DEFINITIONS
+# ==================
+
+target 'AEPSwiftUI' do
+    lib_main
+end
+
+target 'UnitTests' do
+     lib_main
+     test_utils
+end
+
+target 'IntegrationTest' do
+     lib_main
+     test_utils
+     pod 'AEPEdgeConsent'
+end
+
+target 'AEPSwiftUITestApp' do
+    lib_main
+    pod 'AEPEdgeConsent'
+    pod 'AEPAssurance'
+end
+
+target 'AEPSwiftUITestAppUIKit' do
+  lib_main
+  pod 'AEPEdgeConsent'
+  pod 'AEPAssurance'
+end

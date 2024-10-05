@@ -96,3 +96,5 @@ fastlane/test_output
 Pods/
 
 .vscode/
+
+TestProject/
