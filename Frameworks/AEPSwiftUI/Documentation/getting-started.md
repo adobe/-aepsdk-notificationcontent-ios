@@ -41,6 +41,7 @@ targets: [
             dependencies: ["AEPSwiftUI"],
             path: "your/path")
 ]
+```
 
 ### Binaries
 
