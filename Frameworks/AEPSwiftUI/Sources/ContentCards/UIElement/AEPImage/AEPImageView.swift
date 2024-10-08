@@ -59,6 +59,8 @@ struct AEPImageView: View {
                     .font(model.iconFont)
             }
         }.applyModifier(model.modifier)
+            .accessibilityHidden(model.altText == nil)
+            .accessibilityLabel(model.altText ?? "")
     }
 
     /// Determines the appropriate URL for the image based on the device's color scheme.

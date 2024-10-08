@@ -1,8 +1,4 @@
-# Adobe Experience Platform - AEPSwiftUI library for iOS - BETA
-
-# BETA NOTICE
-
-This project is currently in BETA status. Support provided by this library, including but not limited to functionality and public APIs, may be modified prior to the general availability release.
+# Adobe Experience Platform - AEPSwiftUI library for iOS
 
 ## About this project
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "AEPSwiftUI"
-    s.version      = "5.1.0-beta"
+    s.version      = "5.1.0"
     s.summary      = "AEPSwiftUI library for Adobe Experience Cloud SDK. Written and maintained by Adobe."
     s.description  = <<-DESC
                      The AEPSwiftUI library provides SwiftUI components for use with AEP SDK extensions.
