@@ -10,6 +10,7 @@
  governing permissions and limitations under the License.
  */
 
+import AEPServices
 import Foundation
 import SwiftUI
 
@@ -19,9 +20,6 @@ import SwiftUI
 struct AEPImageView: View {
     /// The model containing the data about the image.
     @ObservedObject var model: AEPImage
-
-    /// The environment’s color scheme (light or dark mode).
-    @Environment(\.colorScheme) var colorScheme
 
     /// Initializes a new instance of `AEPImageView` with the provided model
     /// - Parameter model: The `AEPImage` model containing information about the image to display.
@@ -34,14 +32,13 @@ struct AEPImageView: View {
         Group {
             switch model.imageSourceType {
             case .url:
-                AsyncImage(url: themeBasedURL()) { phase in
+                AEPAsyncImageView(model) { phase in
                     if let image = phase.image {
                         // the actual image on successful download
                         image.resizable()
                             .aspectRatio(contentMode: model.contentMode)
-                    } else if phase.error != nil {
-                        // when error do not show imageView
-                        EmptyView()
+                    } else if let error = phase.error {
+                        handleImageLoadError(error)
                     } else {
                         // Placeholder view
                         ProgressView()
@@ -49,9 +46,7 @@ struct AEPImageView: View {
                 }
 
             case .bundle:
-                Image(themeBasedBundledImage())
-                    .resizable()
-                    .aspectRatio(contentMode: model.contentMode)
+                AEPBundleImageView(model)
 
             case .icon:
                 safeIconImage(icon: model.icon)
@@ -61,26 +56,6 @@ struct AEPImageView: View {
         }.applyModifier(model.modifier)
             .accessibilityHidden(model.altText == nil)
             .accessibilityLabel(model.altText ?? "")
-    }
-
-    /// Determines the appropriate URL for the image based on the device's color scheme.
-    /// - Returns: The URL to be used for the image.
-    private func themeBasedURL() -> URL {
-        if colorScheme == .dark {
-            return model.darkUrl ?? model.url!
-        } else {
-            return model.url!
-        }
-    }
-
-    /// Determines the appropriate bundle resource for the image based on the color scheme of the device.
-    /// - Returns: The name of the bundle resource to be used for the image.
-    private func themeBasedBundledImage() -> String {
-        if colorScheme == .dark {
-            return model.darkBundle ?? model.bundle!
-        } else {
-            return model.bundle!
-        }
     }
 
     /// Returns a system icon image or an empty view.
@@ -96,5 +71,14 @@ struct AEPImageView: View {
         } else {
             EmptyView()
         }
+    }
+
+    /// Handles the error encountered during image loading and logs a warning.
+    ///
+    /// - Parameter error: The error encountered while loading the image
+    /// - Returns: An `EmptyView` to use in place of the failed image.
+    private func handleImageLoadError(_ error: Error) -> some View {
+        Log.warning(label: Constants.LOG_TAG, "Error loading Content Card Image: \(error.localizedDescription)")
+        return EmptyView()
     }
 }

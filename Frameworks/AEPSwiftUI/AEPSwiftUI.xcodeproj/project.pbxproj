@@ -107,6 +107,9 @@
 		B669EE222C7FA11E00A26954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B669EE202C7FA11E00A26954 /* Main.storyboard */; };
 		B669EE242C7FA11F00A26954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B669EE232C7FA11F00A26954 /* Assets.xcassets */; };
 		B669EE272C7FA11F00A26954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B669EE252C7FA11F00A26954 /* LaunchScreen.storyboard */; };
+		B69573CC2CD572160027E376 /* AEPBundleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69573CA2CD572160027E376 /* AEPBundleImageView.swift */; };
+		B69573CD2CD572160027E376 /* ContentCardImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69573CB2CD572160027E376 /* ContentCardImageCache.swift */; };
+		B69573CE2CD572160027E376 /* AEPAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69573C92CD572160027E376 /* AEPAsyncImageView.swift */; };
 		B6E108012CABC1FD0037E7D0 /* SmallImageCard.json in Sources */ = {isa = PBXBuildFile; fileRef = B6E108002CABC1FD0037E7D0 /* SmallImageCard.json */; };
 		B6E108032CABC32E0037E7D0 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669ED5E2C703F9B00A26954 /* FileReader.swift */; };
 		B6E108042CABC3960037E7D0 /* SmallImageCard.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E108002CABC1FD0037E7D0 /* SmallImageCard.json */; };
@@ -264,6 +267,9 @@
 		B669EE232C7FA11F00A26954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B669EE262C7FA11F00A26954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B669EE282C7FA11F00A26954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69573C92CD572160027E376 /* AEPAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEPAsyncImageView.swift; sourceTree = "<group>"; };
+		B69573CA2CD572160027E376 /* AEPBundleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEPBundleImageView.swift; sourceTree = "<group>"; };
+		B69573CB2CD572160027E376 /* ContentCardImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardImageCache.swift; sourceTree = "<group>"; };
 		B6E108002CABC1FD0037E7D0 /* SmallImageCard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SmallImageCard.json; sourceTree = "<group>"; };
 		B6E108052CABE2AB0037E7D0 /* NoCard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoCard.json; sourceTree = "<group>"; };
 		B6E1084C2CAC77B30037E7D0 /* MultipleCards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MultipleCards.json; sourceTree = "<group>"; };
@@ -476,6 +482,9 @@
 		B669ED1D2C6AE0B200A26954 /* AEPImage */ = {
 			isa = PBXGroup;
 			children = (
+				B69573C92CD572160027E376 /* AEPAsyncImageView.swift */,
+				B69573CA2CD572160027E376 /* AEPBundleImageView.swift */,
+				B69573CB2CD572160027E376 /* ContentCardImageCache.swift */,
 				B6F4D19F2C62935000376045 /* AEPImage.swift */,
 				B669ED1E2C6AE0D500A26954 /* AEPImageView.swift */,
 				B669ED202C6AEB7D00A26954 /* ImageSourceType.swift */,
@@ -1105,6 +1114,9 @@
 				B669ED522C6FDF2800A26954 /* AEPStackError.swift in Sources */,
 				B669ED7D2C750D8E00A26954 /* ContentCardUI+EventHandler.swift in Sources */,
 				B6F4D19C2C628FFF00376045 /* AEPText.swift in Sources */,
+				B69573CC2CD572160027E376 /* AEPBundleImageView.swift in Sources */,
+				B69573CD2CD572160027E376 /* ContentCardImageCache.swift in Sources */,
+				B69573CE2CD572160027E376 /* AEPAsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1391,7 +1403,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.1.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.aep.AEPSwiftUI;
@@ -1427,7 +1439,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
+				MARKETING_VERSION = 5.1.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.aep.AEPSwiftUI;
