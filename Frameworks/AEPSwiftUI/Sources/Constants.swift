@@ -21,7 +21,7 @@ enum Constants {
         static let CACHE_NAME = "com.adobe.messaging.contentcard.ui.cache"
         static let CACHE_EXPIRY = TimeInterval(60 * 60 * 24 * 30)
     }
-    
+
     enum CardTemplate {
         static let SmallImage = "SmallImage"
         static let LargeImage = "LargeImage"
