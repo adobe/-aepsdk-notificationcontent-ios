@@ -78,7 +78,7 @@ struct AEPImageView: View {
     /// - Parameter error: The error encountered while loading the image
     /// - Returns: An `EmptyView` to use in place of the failed image.
     private func handleImageLoadError(_ error: Error) -> some View {
-        Log.warning(label: UIConstants.LOG_TAG, "Error loading Content Card Image: \(error.localizedDescription)")
+        Log.warning(label: Constants.LOG_TAG, "Error loading Content Card Image: \(error.localizedDescription)")
         return EmptyView()
     }
 }
