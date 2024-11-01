@@ -15,8 +15,13 @@ import SwiftUI
 
 enum Constants {
     static let LOG_TAG = "AEPSwiftUI"
-    static let EXTENSION_VERSION = "5.1.0"
+    static let EXTENSION_VERSION = "5.1.1"
 
+    enum Cache {
+        static let CACHE_NAME = "com.adobe.messaging.contentcard.ui.cache"
+        static let CACHE_EXPIRY = TimeInterval(60 * 60 * 24 * 30)
+    }
+    
     enum CardTemplate {
         static let SmallImage = "SmallImage"
         static let LargeImage = "LargeImage"
