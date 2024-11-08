@@ -25,7 +25,7 @@ struct AEPAsyncImageView<Content>: View where Content: View {
 
     /// The current loading phase of the image.
     @State private var phase: AsyncImagePhase = .empty
-    
+
     /// The current phase of the app's scene, indicating whether the app is active, inactive, or in the background.
     @Environment(\.scenePhase) private var scenePhase
 
@@ -74,7 +74,7 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     private func downloadImage(from url: URL) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                handleImageResult {
+                handleDownloadResult {
                     phase = .failure(error)
                 }
                 return
@@ -82,11 +82,11 @@ struct AEPAsyncImageView<Content>: View where Content: View {
 
             if let data = data, let image = UIImage(data: data) {
                 ContentCardImageCache[url] = image
-                handleImageResult {
+                handleDownloadResult {
                     phase = .success(Image(uiImage: image))
                 }
             } else {
-                handleImageResult {
+                handleDownloadResult {
                     phase = .empty
                 }
             }
@@ -104,13 +104,13 @@ struct AEPAsyncImageView<Content>: View where Content: View {
             return model.url!
         }
     }
-    
+
     /// Handles the result of an image download operation, ensuring updates occur only when the app is in the foreground.
     /// This method takes a closure that updates the image phase and executes it only if the app is currently
     /// in the foreground. This prevents unnecessary UI updates when the app is not visible to the user.
     ///
     /// - Parameter updatePhase: A closure that performs the actual update to the image phase.
-    private func handleImageResult(_ updatePhase: @escaping () -> Void) {
+    private func handleDownloadResult(_ updatePhase: @escaping () -> Void) {
         if !isAppInBackground() {
             DispatchQueue.main.async {
                 updatePhase()
@@ -121,6 +121,6 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     /// Determines if the app is currently in the background.
     /// - Returns: A boolean value indicating whether the app is in the background.
     private func isAppInBackground() -> Bool {
-        return true
+        scenePhase == .background
     }
 }
