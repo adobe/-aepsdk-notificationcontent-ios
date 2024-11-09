@@ -26,6 +26,9 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     /// The current loading phase of the image.
     @State private var phase: AsyncImagePhase = .empty
 
+    /// The current phase of the app's scene, indicating whether the app is active, inactive, or in the background.
+    @Environment(\.scenePhase) private var scenePhase
+
     /// The color scheme environment variable to detect light/dark mode changes and reload the image if needed.
     @Environment(\.colorScheme) private var colorScheme
 
@@ -71,7 +74,7 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     private func downloadImage(from url: URL) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                DispatchQueue.main.async {
+                handleDownloadResult {
                     phase = .failure(error)
                 }
                 return
@@ -79,11 +82,11 @@ struct AEPAsyncImageView<Content>: View where Content: View {
 
             if let data = data, let image = UIImage(data: data) {
                 ContentCardImageCache[url] = image
-                DispatchQueue.main.async {
+                handleDownloadResult {
                     phase = .success(Image(uiImage: image))
                 }
             } else {
-                DispatchQueue.main.async {
+                handleDownloadResult {
                     phase = .empty
                 }
             }
@@ -100,5 +103,26 @@ struct AEPAsyncImageView<Content>: View where Content: View {
         } else {
             return model.url!
         }
+    }
+
+    /// Handles the result of a download operation.
+    /// This method ensures that UI updates occur only when the app is visible to the user.
+    /// It executes the provided closure on the main queue if the app is not in the background.
+    ///
+    /// - Parameter updatePhase: A closure that updates the UI depending on download result
+    private func handleDownloadResult(_ updatePhase: @escaping () -> Void) {
+        if !isSceneBackgrounded() {
+            DispatchQueue.main.async {
+                updatePhase()
+            }
+        }
+    }
+
+    /// Determines if the app's scene is currently in the background state.
+    /// This method relies on the `scenePhase` environment  property.
+    ///
+    /// - Returns:  A boolean value indicating whether the scene is in the background
+    private func isSceneBackgrounded() -> Bool {
+        scenePhase == .background
     }
 }
