@@ -105,22 +105,24 @@ struct AEPAsyncImageView<Content>: View where Content: View {
         }
     }
 
-    /// Handles the result of an image download operation, ensuring updates occur only when the app is in the foreground.
-    /// This method takes a closure that updates the image phase and executes it only if the app is currently
-    /// in the foreground. This prevents unnecessary UI updates when the app is not visible to the user.
+    /// Handles the result of a download operation.
+    /// This method ensures that UI updates occur only when the app is visible to the user.
+    /// It executes the provided closure on the main queue if the app is not in the background.
     ///
-    /// - Parameter updatePhase: A closure that performs the actual update to the image phase.
+    /// - Parameter updatePhase: A closure that updates the UI depending on download result
     private func handleDownloadResult(_ updatePhase: @escaping () -> Void) {
-        if !isAppInBackground() {
+        if !isSceneBackgrounded() {
             DispatchQueue.main.async {
                 updatePhase()
             }
         }
     }
 
-    /// Determines if the app is currently in the background.
-    /// - Returns: A boolean value indicating whether the app is in the background.
-    private func isAppInBackground() -> Bool {
+    /// Determines if the app's scene is currently in the background state.
+    /// This method relies on the `scenePhase` environment  property.
+    ///
+    /// - Returns:  A boolean value indicating whether the scene is in the background
+    private func isSceneBackgrounded() -> Bool {
         scenePhase == .background
     }
 }
