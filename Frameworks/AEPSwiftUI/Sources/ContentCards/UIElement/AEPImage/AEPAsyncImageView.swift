@@ -10,6 +10,7 @@
  governing permissions and limitations under the License.
  */
 
+import AEPServices
 import SwiftUI
 
 /// `AEPAsyncImage` provides a convenient way to load images asynchronously with built-in support for caching
@@ -111,18 +112,13 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     ///
     /// - Parameter updatePhase: A closure that updates the UI depending on download result
     private func handleDownloadResult(_ updatePhase: @escaping () -> Void) {
-        if !isSceneBackgrounded() {
+        if !AppStateManager.shared.isAppInBackground {
+            Log.debug(label: Constants.LOG_TAG, "Updating downloaded image to content card.")
             DispatchQueue.main.async {
                 updatePhase()
             }
+        } else {
+            Log.debug(label: Constants.LOG_TAG, "Preventing to apply downloaded image in background")
         }
-    }
-
-    /// Determines if the app's scene is currently in the background state.
-    /// This method relies on the `scenePhase` environment  property.
-    ///
-    /// - Returns:  A boolean value indicating whether the scene is in the background
-    private func isSceneBackgrounded() -> Bool {
-        scenePhase == .background
     }
 }
