@@ -27,9 +27,6 @@ struct AEPAsyncImageView<Content>: View where Content: View {
     /// The current loading phase of the image.
     @State private var phase: AsyncImagePhase = .empty
 
-    /// The current phase of the app's scene, indicating whether the app is active, inactive, or in the background.
-    @Environment(\.scenePhase) private var scenePhase
-
     /// The color scheme environment variable to detect light/dark mode changes and reload the image if needed.
     @Environment(\.colorScheme) private var colorScheme
 
