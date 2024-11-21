@@ -14,23 +14,26 @@ import AEPServices
 import Foundation
 import UIKit
 
+// A singleton class that manages the state of the application,
+// specifically tracking whether the app is currently in the background or foreground.
 final class AppStateManager {
+    
+    /// The shared instance of `AppStateManager` used to access the singleton instance throughout the app.
     static let shared = AppStateManager()
 
-    /// The shared instance of `AppStateManager` used to access the singleton instance throughout the app.
+    /// A Boolean value indicating whether the app is currently in the background.
     private(set) var isAppInBackground = false
 
-    /// A Boolean value indicating whether the app is currently in the background.
     /// This property is updated automatically through system notifications and should be accessed only for reading.
     private init() {
-        Log.debug(label: Constants.LOG_TAG, "Initializing AppStateManager")
-        setupNotifications()
+        Log.trace(label: Constants.LOG_TAG, "Initializing AppStateManager")
+        setupNotificationObservers()
     }
 
     /// Sets up notifications to observe changes in the app’s state:
     /// - Observes when the app enters the background and calls `didEnterBackground`.
     /// - Observes when the app is about to enter the foreground and calls `willEnterForeground`.
-    private func setupNotifications() {
+    private func setupNotificationObservers() {
         // Observes when the app enters the background
         NotificationCenter.default.addObserver(
             self,
@@ -51,14 +54,14 @@ final class AppStateManager {
     /// Called when the app enters the background.
     /// Updates `isAppInBackground` to `true`
     @objc private func didEnterBackground() {
-        Log.debug(label: Constants.LOG_TAG, "AppStateManager didEnterBackground notification received. Changing isAppInBackground flag to true.")
+        Log.trace(label: Constants.LOG_TAG, "AppStateManager didEnterBackground notification received. Changing isAppInBackground flag to true.")
         isAppInBackground = true
     }
 
     /// Called when the app is about to enter the foreground.
     /// Updates `isAppInBackground` to `false`
     @objc private func willEnterForeground() {
-        Log.debug(label: Constants.LOG_TAG, "AppStateManager willEnterForeground notification received. Changing isAppInBackground flag to false.")
+        Log.trace(label: Constants.LOG_TAG, "AppStateManager willEnterForeground notification received. Changing isAppInBackground flag to false.")
         isAppInBackground = false
     }
 
