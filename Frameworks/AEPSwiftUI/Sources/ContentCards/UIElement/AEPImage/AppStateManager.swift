@@ -17,7 +17,6 @@ import UIKit
 // A singleton class that manages the state of the application,
 // specifically tracking whether the app is currently in the background or foreground.
 final class AppStateManager {
-    
     /// The shared instance of `AppStateManager` used to access the singleton instance throughout the app.
     static let shared = AppStateManager()
 
