@@ -60,6 +60,9 @@
 		B626E0582C5EC24300ED1816 /* AEPSwiftUI+PublicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626E0572C5EC24300ED1816 /* AEPSwiftUI+PublicAPI.swift */; };
 		B626E0612C5EC26300ED1816 /* AEPSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B626E04D2C5EC1F400ED1816 /* AEPSwiftUI.framework */; };
 		B626E06E2C612AC200ED1816 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626E06D2C612AC200ED1816 /* Constants.swift */; };
+		B63064522CE2F22400048B08 /* AEPSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B626E04D2C5EC1F400ED1816 /* AEPSwiftUI.framework */; };
+		B63064532CE2F22400048B08 /* AEPSwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B626E04D2C5EC1F400ED1816 /* AEPSwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B63064582CE3483000048B08 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63064572CE3483000048B08 /* AppStateManager.swift */; };
 		B669ED152C6ABF6200A26954 /* AEPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669ED142C6ABF6200A26954 /* AEPTextView.swift */; };
 		B669ED182C6AC82300A26954 /* AEPButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669ED172C6AC82300A26954 /* AEPButtonView.swift */; };
 		B669ED1F2C6AE0D500A26954 /* AEPImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B669ED1E2C6AE0D500A26954 /* AEPImageView.swift */; };
@@ -149,6 +152,13 @@
 			remoteGlobalIDString = B626E04C2C5EC1F400ED1816;
 			remoteInfo = AEPSwiftUI;
 		};
+		B63064542CE2F22400048B08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B626E0442C5EC1F400ED1816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B626E04C2C5EC1F400ED1816;
+			remoteInfo = AEPSwiftUI;
+		};
 		B669ED942C75440000A26954 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B626E0442C5EC1F400ED1816 /* Project object */;
@@ -159,6 +169,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B63064562CE2F22400048B08 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B63064532CE2F22400048B08 /* AEPSwiftUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B669ED962C75440000A26954 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +240,7 @@
 		B626E0572C5EC24300ED1816 /* AEPSwiftUI+PublicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEPSwiftUI+PublicAPI.swift"; sourceTree = "<group>"; };
 		B626E05D2C5EC26300ED1816 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B626E06D2C612AC200ED1816 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B63064572CE3483000048B08 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		B669ED142C6ABF6200A26954 /* AEPTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEPTextView.swift; sourceTree = "<group>"; };
 		B669ED172C6AC82300A26954 /* AEPButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEPButtonView.swift; sourceTree = "<group>"; };
 		B669ED1E2C6AE0D500A26954 /* AEPImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEPImageView.swift; sourceTree = "<group>"; };
@@ -323,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				110EBA03B80AD39743110BB3 /* Pods_AEPSwiftUITestAppUIKit.framework in Frameworks */,
+				B63064522CE2F22400048B08 /* AEPSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +511,7 @@
 				B6F4D19F2C62935000376045 /* AEPImage.swift */,
 				B669ED1E2C6AE0D500A26954 /* AEPImageView.swift */,
 				B669ED202C6AEB7D00A26954 /* ImageSourceType.swift */,
+				B63064572CE3483000048B08 /* AppStateManager.swift */,
 			);
 			path = AEPImage;
 			sourceTree = "<group>";
@@ -755,10 +779,12 @@
 				B669EE152C7FA11E00A26954 /* Frameworks */,
 				B669EE162C7FA11E00A26954 /* Resources */,
 				09FA88788C29C1D115FD30C4 /* [CP] Embed Pods Frameworks */,
+				B63064562CE2F22400048B08 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B63064552CE2F22400048B08 /* PBXTargetDependency */,
 			);
 			name = AEPSwiftUITestAppUIKit;
 			productName = AEPSwiftUITestAppUIKit;
@@ -1081,6 +1107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F4D1942C6279C300376045 /* ContentCardTemplateType.swift in Sources */,
+				B63064582CE3483000048B08 /* AppStateManager.swift in Sources */,
 				B626E0582C5EC24300ED1816 /* AEPSwiftUI+PublicAPI.swift in Sources */,
 				B626E06E2C612AC200ED1816 /* Constants.swift in Sources */,
 				B669ED292C6D3B8000A26954 /* AEPHStackView.swift in Sources */,
@@ -1186,6 +1213,11 @@
 			isa = PBXTargetDependency;
 			target = B626E04C2C5EC1F400ED1816 /* AEPSwiftUI */;
 			targetProxy = B626E06B2C60A37E00ED1816 /* PBXContainerItemProxy */;
+		};
+		B63064552CE2F22400048B08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B626E04C2C5EC1F400ED1816 /* AEPSwiftUI */;
+			targetProxy = B63064542CE2F22400048B08 /* PBXContainerItemProxy */;
 		};
 		B669ED952C75440000A26954 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
