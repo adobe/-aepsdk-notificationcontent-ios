@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to handle click URLs in notification templates for iOS applications.
+This guide explains how to custom handle click URL on notification templates built by AEPNotificationContent SDK.
 
 ## Creating a Custom NotificationViewController
 
@@ -45,4 +45,4 @@ class NotificationViewController: AEPNotificationViewController {
 }
 ```
 
-Note: The notification removal code shown above is optional. Include it only if you want to automatically dismiss the notification after handling the URL.
+> Note: The notification removal code shown above is optional. Include it only if you want to automatically dismiss the notification after handling the URL.
