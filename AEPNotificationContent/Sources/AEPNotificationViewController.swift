@@ -15,7 +15,7 @@ import UserNotifications
 import UserNotificationsUI
 
 open class AEPNotificationViewController: UIViewController, UNNotificationContentExtension, TemplateControllerDelegate {
-    var notification: UNNotification?
+    open var notification: UNNotification?
 
     // MARK: - UNNotificationContentExtension delegate methods
 
@@ -113,7 +113,7 @@ open class AEPNotificationViewController: UIViewController, UNNotificationConten
     }
 
     /// Use this method to handle the clickURL from interactions with the push template
-    func handleNotificationClickURL(_ urlString: String?) {
+    open func handleNotificationClickURL(_ urlString: String?) {
         /// If the url is nil or invalid, perform the default action
         /// The default action is to open the app
         guard let urlString = urlString, let url = URL(string: urlString) else {
