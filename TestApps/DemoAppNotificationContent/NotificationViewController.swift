@@ -17,4 +17,7 @@ import AEPNotificationContent
 
 class NotificationViewController: AEPNotificationViewController {
 
+    override func handleNotificationClickURL(_ urlString: String?) {
+        // optionally handle the clicks on Notification template.
+    }
 }
